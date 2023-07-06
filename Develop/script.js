@@ -5,9 +5,6 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-// var length = prompt("Enter your desired password length")
-// var numberQuery = prompt("Include Numbers? Y/N")
-// var symbolQuery = prompt("Include special symbols? Y/N")
 
 // Applicable variable strings for password characters
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -33,20 +30,19 @@ var lowSym = lowerCase + symbol
 
 
 function generatePassword() {
-  var length = window.prompt("Enter your desired password length")
-  var numberQuery = confirm("Do you want numbers? OK for Yes.")
-  var symbolQuery = confirm("Do you want special symbols? OK for yes.")
-  var lowCaseSet = confirm("Do you want lowercase letters? OK for yes.")
-  var upCaseSet = confirm("Do you want uppercase letters? OK for yes.")
-
-console.log(numberQuery)
-console.log(symbolQuery)
-console.log(lowCaseSet)
-console.log(upCaseSet)
+  var length = window.prompt("Enter your desired password length between 8 and 128 characters long.")
+  var numberQuery = confirm("Do you want numbers? OK for Yes. Cancel for no.")
+  var symbolQuery = confirm("Do you want special symbols? OK for yes. Cancel for no.")
+  var lowCaseSet = confirm("Do you want lowercase letters? OK for yes. Cancel for no.")
+  var upCaseSet = confirm("Do you want uppercase letters? OK for yes. Cancel for no.")
 
   var result = ""
+  
+// Length must be between 8 and 128 or the user will be prompted to try again.
+  if (length < 8 || length > 128) {
+    result += "Please press the button again and put in a length between 8 and 128."
 // All options wanted
-  if (numberQuery == true && symbolQuery == true && lowCaseSet == true && upCaseSet == true) {
+  } else if (numberQuery == true && symbolQuery == true && lowCaseSet == true && upCaseSet == true) {
   for (var i = 0; i < length; i++){
     result += allChar.charAt(Math.floor(Math.random() * allChar.length));
   }
@@ -122,10 +118,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-
-
-
 }
 
 // Add event listener to generate button

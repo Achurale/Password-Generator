@@ -28,3 +28,22 @@ THEN a password is generated that matches the selected criteria
 
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+
+
+## Description
+
+A password generator that allows for the user to pick and choose what they want randomly generated in a password between length and four different character types. This assignment was good practice for hands on practice for using a string array, combining arrays, and working on an if function.
+
+## Usage
+
+The user will be given five prompts upon pressing the button that will need to be answered before a password is generated. The length will need to be between 8 and 128 characters long, and must choose at least one option out of the four different character types (uppercase letters, lowercase letters, numbers, and symbols). If not, the user will be prompted to try again.
+
+![alt text](./Develop/Screenshot1.png)
+![alt text](./Develop/Screenshot2.png)
+
+## Credits
+
+Many thanks to my fellow students for helping me figure out a lot of things.
+
+## Link
+https://achurale.github.io/Password-Generator/
